@@ -1,7 +1,7 @@
 package task
 
 import (
-	"github.com/AliyunContainerService/image-syncer/pkg/sync"
+	"github.com/cndoit18/image-syncer/pkg/sync"
 )
 
 type Task interface {

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/AliyunContainerService/image-syncer/pkg/concurrent"
-	"github.com/AliyunContainerService/image-syncer/pkg/task"
-	"github.com/AliyunContainerService/image-syncer/pkg/utils"
+	"github.com/cndoit18/image-syncer/pkg/concurrent"
+	"github.com/cndoit18/image-syncer/pkg/task"
+	"github.com/cndoit18/image-syncer/pkg/utils"
 
 	"github.com/fatih/color"
 	"github.com/sirupsen/logrus"

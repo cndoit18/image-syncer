@@ -6,7 +6,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/AliyunContainerService/image-syncer/pkg/utils"
+	"github.com/cndoit18/image-syncer/pkg/utils"
 	"github.com/containers/image/v5/docker"
 	"github.com/containers/image/v5/manifest"
 	"github.com/containers/image/v5/types"

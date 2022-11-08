@@ -8,7 +8,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/AliyunContainerService/image-syncer/pkg/utils"
+	"github.com/cndoit18/image-syncer/pkg/utils"
 
 	"gopkg.in/yaml.v2"
 )

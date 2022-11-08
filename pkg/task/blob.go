@@ -5,7 +5,7 @@ import (
 
 	"github.com/docker/go-units"
 
-	"github.com/AliyunContainerService/image-syncer/pkg/sync"
+	"github.com/cndoit18/image-syncer/pkg/sync"
 	"github.com/containers/image/v5/types"
 )
 

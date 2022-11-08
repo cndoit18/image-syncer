@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/AliyunContainerService/image-syncer/pkg/concurrent"
+	"github.com/cndoit18/image-syncer/pkg/concurrent"
 	"github.com/containers/image/v5/manifest"
 
-	"github.com/AliyunContainerService/image-syncer/pkg/utils"
+	"github.com/cndoit18/image-syncer/pkg/utils"
 
-	"github.com/AliyunContainerService/image-syncer/pkg/sync"
+	"github.com/cndoit18/image-syncer/pkg/sync"
 )
 
 // URLTask converts an image RepoURL pair (specific tag) to BlobTask(s) and ManifestTask(s).
