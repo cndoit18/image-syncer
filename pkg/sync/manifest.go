@@ -1,6 +1,7 @@
 package sync
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"strings"
@@ -14,10 +15,9 @@ import (
 func ManifestHandler(manifestBytes []byte, manifestType string, osFilterList, archFilterList []string,
 	i *ImageSource, parent *manifest.Schema2List) ([]manifest.Manifest, interface{}, error) {
 	var manifestInfoSlice []manifest.Manifest
-
 	if manifestType == manifest.DockerV2Schema2MediaType {
-		manifestInfo, err := manifest.Schema2FromManifest(manifestBytes)
-		if err != nil {
+		manifestInfo := &manifest.Schema2{}
+		if err := json.Unmarshal(manifestBytes, manifestInfo); err != nil {
 			return nil, nil, err
 		}
 
