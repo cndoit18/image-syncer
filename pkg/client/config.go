@@ -32,9 +32,10 @@ type Config struct {
 
 // Auth describes the authentication information of a registry
 type Auth struct {
-	Username string `json:"username" yaml:"username"`
-	Password string `json:"password" yaml:"password"`
-	Insecure bool   `json:"insecure" yaml:"insecure"`
+	Username      string `json:"username" yaml:"username"`
+	Password      string `json:"password" yaml:"password"`
+	Insecure      bool   `json:"insecure" yaml:"insecure"`
+	IdentityToken string `json:"identityToken" yaml:"identityToken"`
 }
 
 // NewSyncConfig creates a Config struct
