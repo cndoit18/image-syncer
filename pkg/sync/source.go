@@ -29,7 +29,7 @@ type ImageSource struct {
 // to list tags.
 // If username or password is empty, access to repository will be anonymous.
 // A repository string is the rest part of the images url except tag digest and registry
-func NewImageSource(registry, repository, tagOrDigest, username, password string, insecure bool) (*ImageSource, error) {
+func NewImageSource(registry, repository, tagOrDigest, username, password, identityToken string, insecure bool) (*ImageSource, error) {
 	if strings.Contains(repository, ":") {
 		return nil, fmt.Errorf("repository string should not include ':'")
 	}
@@ -54,6 +54,12 @@ func NewImageSource(registry, repository, tagOrDigest, username, password string
 		sysctx.DockerAuthConfig = &types.DockerAuthConfig{
 			Username: username,
 			Password: password,
+		}
+	}
+
+	if identityToken != "" {
+		sysctx.DockerAuthConfig = &types.DockerAuthConfig{
+			IdentityToken: identityToken,
 		}
 	}
 

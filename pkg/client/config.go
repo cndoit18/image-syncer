@@ -25,6 +25,12 @@ type Config struct {
 	osFilterList []string
 	// only images with selected architecture can be sync
 	archFilterList []string
+
+	// If the destination registry and namespace is not provided,
+	// the source image will be synchronized to defaultDestRegistry
+	// and defaultDestNamespace with origin repo name and tag.
+	defaultDestRegistry  string
+	defaultDestNamespace string
 }
 
 // NewSyncConfig creates a Config struct
