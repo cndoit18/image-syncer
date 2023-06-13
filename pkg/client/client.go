@@ -3,6 +3,7 @@ package client
 import (
 	"container/list"
 	"fmt"
+	"os"
 	"strings"
 	sync2 "sync"
 
@@ -189,7 +190,7 @@ func (c *Client) GenerateSyncTask(source string, destination string) ([]*URLPair
 		}
 	}
 
-	destURL, err := tools.NewRepoURL(destination)
+	destURL, err := tools.NewRepoURL(os.ExpandEnv(destination))
 	if err != nil {
 		return nil, fmt.Errorf("url %s format error: %v", destination, err)
 	}
