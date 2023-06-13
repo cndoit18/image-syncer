@@ -2,6 +2,7 @@ package client
 
 import (
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/cndoit18/image-syncer/pkg/concurrent"
@@ -68,7 +69,7 @@ func (c *Client) Run() error {
 	for source, destList := range imageListMap {
 		for _, dest := range destList {
 			// TODO: support multiple destinations for one task
-			ruleTask, err := task.NewRuleTask(source, dest,
+			ruleTask, err := task.NewRuleTask(source, os.ExpandEnv(dest),
 				func(repository string) utils.Auth {
 					auth, exist := c.config.GetAuth(repository)
 					if !exist {
