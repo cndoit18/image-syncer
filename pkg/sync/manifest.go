@@ -1,6 +1,7 @@
 package sync
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"strings"
@@ -32,8 +33,8 @@ func GenerateManifestObj(manifestBytes []byte, manifestType string, osFilterList
 
 	switch manifestType {
 	case manifest.DockerV2Schema2MediaType:
-		manifestObj, err := manifest.Schema2FromManifest(manifestBytes)
-		if err != nil {
+		manifestObj := &manifest.Schema2{}
+		if err := json.Unmarshal(manifestBytes, manifestObj); err != nil {
 			return nil, nil, nil, err
 		}
 
